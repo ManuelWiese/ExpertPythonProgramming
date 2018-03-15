@@ -78,6 +78,10 @@ Chaper 2: Syntax Best Practices - below the Class Level
 *** a context manager implements __enter__ and __exit__ methods.
 **** __enter__ will be called before the inner block is called
 **** __exit__ will be called after
+**** example in context_manager_example.py
+*** a context manager can be implemented using the contextmanager decorator from contextlib
+**** in this case you need to implement a generator
+**** example in context_manager_decorator_example.py
 
 * Syntax Best Practices –above the Class Level
 ** Descriptors

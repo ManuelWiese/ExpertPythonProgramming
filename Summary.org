@@ -69,11 +69,17 @@ Chaper 2: Syntax Best Practices - below the Class Level
 ** Decorators(i love them :-) )
 *** just syntatic sugar to enhance function objects 
 *** A decorator is a named callable object that accepts a single argument and returns a callable object.
-*** see decorator_example.py
+*** see decorator_example.py    
+*** Possible usecases come to mind: Caching, logging, Singleton?, stubbing/mocking, checking arguments, ...
 
 ** Context managers
+*** Everyone knows context managers from file opening i guess(with open("xyz.txt", "r") as f:)
+*** Multiple context managers can be used at once
+*** a context manager implements __enter__ and __exit__ methods.
+**** __enter__ will be called before the inner block is called
+**** __exit__ will be called after
 
 * Syntax Best Practices –above the Class Level
 ** Descriptors
 ** Properties
-*** 
+* 

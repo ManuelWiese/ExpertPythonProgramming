@@ -94,6 +94,9 @@ Chaper 2: Syntax Best Practices - below the Class Level
 **** it is used nowhere i know of, kind of useless for now
 
 * Syntax Best Practices –above the Class Level
+** Subclassing built-in types
+*** it is as easy as it gets, example in subclassing_build_in_types_example.py
+
 ** Descriptors
 ** Properties
 * 

@@ -1,0 +1,79 @@
+Chaper 2: Syntax Best Practices - below the Class Level
+
+* Strings and Bytes
+** In python2 str was represented by byte strings
+** In python3 str is an immutable sequence that stores Unicode strings
+** byte strings are now called bytes
+*** bytes only allow integers >= 0 and <= 255 as sequence value(duh...)
+** In python3 every unprefixed string literal is unicode(this i great!)
+*** the u prefix is still allowed for backwards compatibility
+*** unicode strings contain abstract text that is independent from the byte representation
+*** to save or send we have to encode it to a byte sequence
+**** this can be done using str.encode(encoding, errors)
+**** or the bytes constructor bytes(source, encoding, errors)
+*** binary data in bytes can be decoded the "same" way
+**** using bytes.decode 
+**** or the str constructor
+
+** python3 str objects are immutable
+*** Once initialized they will never change their value
+*** this makes them usable a keys in a dict for example
+*** when a modified version is required, a completely new object is created
+** Concatenation can be slower for a large number of strings
+*** see string_concatenation.py
+
+* Collections
+** Lists and tuples
+*** tuples are immutable and thus hashable
+*** lists are not
+*** list comprehensions rock, we all know this
+
+** Dictionaries
+*** dict.keys(), dict.values() and dict.items() return view objects
+*** to use object as key it must have __hash__ and __eq__
+*** dictionaries allow hash collisions, but performance will suffer when using poor hashes(look at dictionary_hash_collision.py)
+*** Complexity of some operations is dependend on the maximum size the dict ever achieved.
+*** dicts seem to be sorted by hash and the order the elements were added. You cannot rely on sorting.
+*** Use OrderedDict for that
+
+** Sets
+*** They come in two flavors: set() and frozenset()
+*** set() is mutable and not hashable
+*** frozenset() is immutable and hashable
+*** Elements must be immutable of course
+*** Set creation
+**** using an set() with an iterable: set([1, 2, 3])
+**** using a set comprehension: {i for i n range(3)}
+**** using set literals {1, 2, 3}
+***** Attention: empty {} curly brackets are reserved for empty dictionaries
+*** set is pretty similar to dict, implemented like dict with dummy values
+
+** collections module
+*** namedtuple creates a factory for fixed len tuple creation. Attributes are named. 
+**** look at example in namedtuple_example.py
+*** defaultdict is a dict which returns a default value for not yet created entries.
+**** look at defaultdict_example.py
+
+* Advanced syntax
+** Iterators
+*** Iterators are containers implementing the iterator protocol
+*** to make a container object iterable implement the __iter__ and __next__ methods.
+*** for an example look at iterator_example.py
+
+** The yield statement(Generators)
+*** The yield statement allows you to pause a function and return an intermediate result
+*** the function can be resumed later
+*** you can retrieve new values from generators as from iterators
+*** for an example look at generator_example.py
+
+** Decorators(i love them :-) )
+*** just syntatic sugar to enhance function objects 
+*** A decorator is a named callable object that accepts a single argument and returns a callable object.
+*** see decorator_example.py
+
+** Context managers
+
+* Syntax Best Practices –above the Class Level
+** Descriptors
+** Properties
+*** 

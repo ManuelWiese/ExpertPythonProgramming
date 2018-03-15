@@ -83,6 +83,16 @@ Chaper 2: Syntax Best Practices - below the Class Level
 **** in this case you need to implement a generator
 **** example in context_manager_decorator_example.py
 
+** Other syntax elements you may not know yet
+
+*** The for ... else ... statement
+**** everyone knows that???
+**** else block is entered if a break occured in loop, simple as that
+
+*** Function annotations
+**** you can add metadata info about types used as parameters and the type of the return value
+**** it is used nowhere i know of, kind of useless for now
+
 * Syntax Best Practices –above the Class Level
 ** Descriptors
 ** Properties

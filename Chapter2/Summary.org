@@ -56,4 +56,8 @@ Chaper 2: Syntax Best Practices - below the Class Level
 
 * Advanced syntax
 ** Iterators
+*** Iterators are containers implementing the iterator protocol
+*** to make a container object iterable implement the __iter__ and __next__ methods.
+*** for an example look at iterator_example.py
+
   
